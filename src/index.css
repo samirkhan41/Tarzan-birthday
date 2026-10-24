@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body {
+    background-color: #FFF1E7;
+    color: #38213D;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+  }
+}
+
+@layer utilities {
+  .perspective-1200 {
+    perspective: 1200px;
+  }
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+
+  /* Pastel gradient backgrounds */
+  .bg-pastel-gradient {
+    background: radial-gradient(circle at 50% 30%, #FFFDF8 0%, #FFF1E7 55%, #FFD7DF 100%);
+  }
+
+  .bg-soft-blush {
+    background: linear-gradient(180deg, #FFF1E7 0%, #FFD7DF 50%, #F6AFC4 100%);
+  }
+
+  /* Cake stand pedestal 3D shadow */
+  .stand-shadow {
+    box-shadow: 0 18px 30px -6px rgba(56, 33, 61, 0.15), 0 8px 14px -4px rgba(217, 31, 85, 0.08);
+  }
+
+  /* Letter paper texture */
+  .letter-paper {
+    background: #FFFDF8;
+    box-shadow: 
+      0 4px 6px -1px rgba(56, 33, 61, 0.05),
+      0 20px 45px -10px rgba(56, 33, 61, 0.15);
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #F6AFC4;
+    border-radius: 9999px;
+  }
+}
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
